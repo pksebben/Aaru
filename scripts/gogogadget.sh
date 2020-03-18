@@ -4,10 +4,14 @@
 
 export CDPATH=$HOME
 
-source .venv/aaru/bin/activate
+export PYTHONPATH=~/Documents/code/Creative/react-writing
+
+source ~/.venv/aaru/bin/activate
 
 cd Documents/code/Creative/react-writing/aaru
 
 # run the api server
 
-npm start
+zsh -e <(echo "emacs ~/Documents/code/Creative/react-writing/aaru/src/App.jsx ~/Documents/code/Creative/react-writing/aaru/server/app.py -mm") &
+
+echo "to run the server: npm start"

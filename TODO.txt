@@ -1,0 +1,17 @@
+Aaru TODO
+~~~~~~~~~~~~~~~
+So I don't like ORG-mode.  We're gonna do this old-school.
+
+
+CURRENT
+~~~~~~~~~~~~~~~~~~~~~~~~~
+[ ] Find a way around parsing strings for now, so I can get on with creating some frontend.
+[ ] Get the backend API up as an MVP, which means spitting out JSON when hit with a POST
+
+NEXT
+~~~~~~~~~~~~~~~~~~~~~~~~~
+[ ] Start developing the frontend.
+
+
+Monday, March 9, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

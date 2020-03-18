@@ -1,0 +1,27 @@
+{% extends "base_content.html" %}
+
+{% block content %}
+<div class="intro">
+  <h1>Tell us a story!</h1>
+  {% if parent.id != 0 %}
+  <p>{{ parent.text }}</p>
+  {% endif %}
+  <label for="chunk">Now, it's your turn to tell a story:</label>
+
+    <form id="write" action="/submitchunk" method="post">
+      {% if parent %}
+      <input type="hidden" name="parentid" value={{ parent.id }}>
+      {% else %}
+      <input type="hidden" name="parentid" value=0>
+      {% endif %}
+      {% if requiretitle %}
+      <input type="text" name="title" required="True" placeholder="Enter a title">
+      {% else %}
+      <input type="hidden" name="title" value=None>
+      {% endif %}
+      <textarea id="chunk" formid="write" autocomplete="off" required="True" name="chunkbody"></textarea>
+      <button>and that is all she wrote!</button>
+    </form>
+</div>
+
+{% endblock %}
