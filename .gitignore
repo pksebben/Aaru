@@ -2,11 +2,14 @@
 
 # dependencies
 /node_modules
+__pycache__
 /.pnp
 .pnp.js
+scripts/
 
 # testing
 /coverage
+testdb.db
 
 # production
 /build
