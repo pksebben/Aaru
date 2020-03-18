@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# writing_project
+It's a working title, don't get all bent outta shape.
 
-## Available Scripts
+The goal of this project is to provide a platform for authors to engage in collaborative storytelling.  Shit, now I don't know how to describe it from here.  Uh...         ...hold on.
 
-In the project directory, you can run:
 
-### `npm start`
+# Introduction
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Better.  Okay, have you ever heard of [Exquisite Corpse?](https://en.wikipedia.org/wiki/Exquisite_corpse) 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+It's a surrealist game created in 1925 or 1918, depending on whether you choose to believe [Andre](https://en.wikipedia.org/wiki/Andr%C3%A9_Breton) or [Pierre](https://en.wikipedia.org/wiki/Pierre_Reverdy).  But they were both surrealists so obviously neither can be trusted anyhow.  But I digress.  None of that is important.  What's important is how the game is played.
 
-### `npm test`
+### How the game is played
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You take a sheet of paper and fold it in thirds.  Or halves.  Or whatever division you so choose.  The point is that you fold it.
 
-### `npm run build`
+Then, someone (maybe you!) draws something on the top section, without revealing it to the other players (no peeking!).  Before handing the page off, they draw a few lines to indicate where on the page their drawing ends. Then they hand it off to the next player.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The next player, using the limited information provided by the scant few lines now at the *top* of her page, continues the drawing.  They leave lines for the next player, who leaves lines for the next player, and so on and so on.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+You continue until the page is full.  Then unfold it and collectively gaze upon what you did.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Congratulations! [It's a monstrosity!](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Andr%C3%A8_breton%2C_marcel_duhamel%2C_max_morise_e_yves_tanguy%2C_cadavre_exquis%2C_1928_%28galerie_1900-2000_parigi%29_02.jpg/800px-Andr%C3%A8_breton%2C_marcel_duhamel%2C_max_morise_e_yves_tanguy%2C_cadavre_exquis%2C_1928_%28galerie_1900-2000_parigi%29_02.jpg "what hath science wrought?")
 
-### `npm run eject`
+This can be done with writing, such that you only see a passage or two.  We will not be doing this.  Not, at least, at first.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Our little version
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Instead of leaving everyone in the dark, we thought maybe it would be nice if they collaborated on a story but got to see the whole thing!  That makes it easier to develop characters, dontcha think?  Anyhow.  There are going to be at least a rule or two.  Maybe three.  Maybe a million!  But at least two. Possibly.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+There's actually about a bajillion rules we *could* implement around the concept of telling a story by passing a digital talking-stick, and we're going to allow users to define a lot of them in the beginning phases of the project.  More on that later.  For now, what you need to know is that this will be an online story fire, where people take turns adding to long narratives.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## But, couldn't we just do this on a subreddit?
 
-## Learn More
+We could.  That's also missing the point.  The idea is to create a focused space for people to read and to write.  Not to talk about writing or upvote each others' writing memes.  There will be the option for feedback, but it will be tied to actual writing that has been written.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Also, by playing with the rules, the hope is that we get to a stage where it's engaging and fun and keeps folks coming back to make more!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## On to the tech
 
-### Code Splitting
+I (the royal I?) am writing the beginning of this thing in python using flask, sqlalchemy, and postgres.  Site itself is gonna live in React.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### But, there are better ways to do it!
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Then do it those ways.  These are the things I know and I started it.  If you wanna use other stuff, go right ahead, just make sure it works with this stuff.  Or go start something new.
