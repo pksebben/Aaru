@@ -13,6 +13,13 @@ import db
 import exceptions
 import models
 
+"""
+api.py
+The structure of an api call:
+GET > must come with a chunkid in the GET path.  Returns JSON
+
+"""
+
 api = Blueprint('api', __name__)
 
 meta = MetaData()
@@ -30,14 +37,43 @@ class ChunkSchema(Schema):
 
 # END MARSHMALLOW SCHEMA
 
-@api.route("/chunk", methods=['POST'])
-def retrieve_chunk():
-    # return a JSON of chunk data with id = chunkid
-    chunkid = flask.request.form['chunkid']
+# read a chunk
+@api.route("/chunk/<chunk_id>", methods=['GET'])
+def get_chunk(chunkid):
     chunk = session.query(models.Chunk).get(chunkid)
-    schema = ChunkSchema()
-    res = flask.jsonify(schema.dump(chunk))
+    res = flask.jsonify(ChunkSchema().dump(chunk))
     return res
+
+# create a chunk
+@api.route("/chunk", methods = ['POST'])
+def post_chunk():
+    pass
+
+# update a chunk
+@api.route("/chunk", methods = ['PUT'])
+def put_chunk():
+    pass
+
+# read chunks
+@api.route("/chunks/<root_chunk_id", methods = ['GET'])
+def get_chunks(root_chunk_id):
+    beginning_getter = session.query(models.Chunk).\
+        filter(models.Chunk.id == root_chunk_id).cte(name='children_for', recursive=True)
+    with_recursive = beginning_getter.union_all(
+        session.query(models.Chunk).filter(models.Chunk.parent == beginning_getter.c.id)
+    )
+    return flask.jsonify(ChunkSchema().dump(session.query(with_recursive), many=True))
+
+
+
+# @api.route("/chunk", methods=['POST','GET'])
+# def retrieve_chunk():
+#     # return a JSON of chunk data with id = chunkid
+#     chunkid = flask.request.form['chunkid']
+#     chunk = session.query(models.Chunk).get(chunkid)
+#     schema = ChunkSchema()
+#     res = flask.jsonify(schema.dump(chunk))
+#     return res
 
 @api.route("/chunktree", methods=['POST'])
 def retrieve_tree():
