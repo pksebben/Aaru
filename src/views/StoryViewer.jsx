@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+
+import StoryPane from '../ducks/storypane/StoryPane';
+
 //Story Viewer
 
 // class StoryViewer extends Component {
@@ -63,69 +66,10 @@ import { render } from 'react-dom';
 
 
 
-export default class Storyviewer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: 20,
-            loading: false
-        };
-    }
-
-    componentDidMount() {
-        this.refs.myscroll.addEventListener("scroll", () => {
-            if (
-                this.refs.myscroll.scrollTop + this.refs.myscroll.clientHeight >=
-                    this.refs.myscroll.scrollHeight
-            ) {
-                this.loadMore();
-            }
-        });
-    }
-
-    showChunks() {
-        var chunks = this.state.chunks;
-        
-    }
-    
-    showItems() {
-        var items = [];
-        for (var i = 0; i< this.state.items; i++) {
-            items.push(<li key={i}>Item {i}</li>);
-        }
-        return items;
-    }
-
-    //this could either be get next story or retrieve *all* the data.  It may be best to do the whole story tree in one big chunk (or, if chunks get too big, ) 
-    getData() {
-        var xhr = new XMLHttpRequest();
-        xhr.addEventListener('load', ()=> {
-            console.log(xhr.responseText);
-        });
-        xhr.open('POST', 'localhost:8080/SOME_STORY_DATA');
-        xhr.send(JSON.stringify({ }));
-    }
-
-    loadMore() {
-        this.setState({ loading: true });
-        setTimeout(() => {
-            this.setState({ items: this.state.items + 20, loading: false });
-        }, 2000);
-    }
-
+export default class StoryViewer extends Component {
     render() {
         return (
-            <div
-              className="Storyviewer"
-              ref="myscroll"
-              style={{ height:"420px", overflow:"auto"}}>
-              <header className="Storyviewer-header">
-                <h1 className="SV-Title">SV TITLE</h1>
-              </header>
-              <ul>
-                {this.showItems()}
-              </ul>
-            </div>
+	    <StoryPane/>
         );
     }
 }
