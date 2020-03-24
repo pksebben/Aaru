@@ -9,3 +9,4 @@ app.secret_key="kcubaiebfkjsdliausdbf"
 def init():
     app.register_blueprint(views)
     app.register_blueprint(api)
+    return app
