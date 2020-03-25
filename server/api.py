@@ -55,7 +55,7 @@ def put_chunk():
     pass
 
 # read chunks
-@api.route("/chunks/<root_chunk_id", methods = ['GET'])
+@api.route("/chunks/<root_chunk_id>", methods = ['GET'])
 def get_chunks(root_chunk_id):
     beginning_getter = session.query(models.Chunk).\
         filter(models.Chunk.id == root_chunk_id).cte(name='children_for', recursive=True)

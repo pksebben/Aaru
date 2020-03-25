@@ -8,6 +8,7 @@ import { getChunks, getChunksError, getChunksPending} from './reducers';
 
 
 import LoadingSpinner from './LoadingSpinner';
+import ChunkView from '../chunkview/ChunkView';
 // import ChunkList from './ChunkList'; //		do I need this?
 
 // this directory is going to need the following:
@@ -38,7 +39,6 @@ class StoryPane extends Component {
                 this.loadMore();
             }
         });
-        fetchChunksAction();
     }
 
     showChunks() {
@@ -50,8 +50,7 @@ class StoryPane extends Component {
         var items = [];
         for (var i = 0; i< this.state.items; i++) {
             items.push(<div>
-                         <h3>chunk</h3>
-                         <p>{this.state.chunks[i].text}</p>
+			 <ChunkView chunkid='1' text='this is test text'/>
                        </div>); //this should be loading chunks
         }
         return items;

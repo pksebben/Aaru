@@ -15,3 +15,19 @@ NEXT
 
 Monday, March 9, 2020
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wednesday, March 25, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FRONTEND STATUS
+-------------------------
+Redux has caused a lot of yak-shaving.
+The fix is to build from the ground up:
+1. build a form of the chunk thing that takes hardcoded testing data and keeps it in state.
+2. build that to make an api call (without redux)
+3. build redux into the app in it's most basic form
+4. get chunks loaded into redux and served into the app
+5. move the api call into redux
+
+there may be more steps that have to be taken before things are truly working.  That said, there is a ton about react and redux that I simply cannot learn by doing all at once.
+

@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+
 import { Provider } from 'react-redux';
 import store from './store';
+
 import Routes from './Routes';
+
+
 
 export default function App() {
     return (
@@ -11,3 +14,4 @@ export default function App() {
         </Provider>
     );
 }
+
