@@ -25,8 +25,9 @@ class StoryPane extends Component {
         super(props);
         this.state = {
             chunkid:1,//this should be settable later
-            items: 20,
-            loading: false
+            loading: false,
+            chunks: [],
+            items: []
         };
     }
 
@@ -39,6 +40,14 @@ class StoryPane extends Component {
                 this.loadMore();
             }
         });
+        fetch('http://localhost:8080/chunks/1')
+            .then(res => res.json()).then(
+                (result) => {
+                    this.setState({
+                        chunks : result
+                    });
+                }
+            );
     }
 
     showChunks() {
@@ -47,31 +56,69 @@ class StoryPane extends Component {
     }
     
     showItems() {
-        var items = [];
-        for (var i = 0; i< this.state.items; i++) {
-            items.push(<div>
-			 <ChunkView chunkid='1' text='this is test text'/>
+        for (var i = 0; i< this.state.chunks.length ; i++) {
+            this.items.push(<div>
+			 <ChunkView chunkid='{i}' text='{this.state.chunks[i].text}'/>
                        </div>); //this should be loading chunks
         }
-        return items;
+        return this.items;
     }
 
     //this could either be get next story or retrieve *all* the data.  It may be best to do the whole story tree in one big chunk (or, if chunks get too big, ) 
-    getData(chunkid) {
-        var xhr = new XMLHttpRequest();
-        xhr.addEventListener('load', ()=> {
-            console.log(xhr.responseText);
-        });
-        xhr.open('GET', 'localhost:8080/chunks/'.concat(chunkid));
-        xhr.send(JSON.stringify({ }));
-    }
+    // getData(chunkid) {
+    //     var reqHeader = new Headers();
+    //     reqHeader.append('Content-Type', 'application/json');
+    //     fetch("http://localhost:8080/chunks/1", {
+    //         method :'GET',
+    //         mode:'cors',
+    //         headers:reqHeader
+    //     })
+    //         .then(response => {
+    //             const chunks = response.json();
+    //             this.setState({chunks : chunks});
+    //         })
+    //         .catch(err => {
+    //             throw new Error(err);
+    //         });
+    //     // var xhr = new XMLHttpRequest();
+    //     // xhr.addEventListener('load', ()=> {
+    //     //     console.log(xhr.responseText);
+    //     //     console.log(xhr.responseType);
+    //     //     this.chunks = xhr.responseXML;
+    //     // });
+    //     // xhr.open('GET', 'http://localhost:8080/chunks/'.concat(chunkid));
+    //     // xhr.send(JSON.stringify({ }));
+    //     // console.log(xhr.responseType);
+    //     // console.log("THIS DOT CHUNKS");
+    //     // console.log(this.chunks);
+    // }
 
-    loadMore() {
-        this.setState({ loading: true });
-        setTimeout(() => {
-            this.setState({ items: this.state.items + 20, loading: false });
-        }, 2000);
-    }
+    // async newGetData(url = '', chunkid = 1) {
+    //     const res = await fetch(url.concat(chunkid), {
+    //         method : 'GET',
+    //         mode : 'cors',
+    //         cache : 'no-cache',
+    //         credentials : 'same-origin',
+    //         headers: {
+    //             'Content-Type' : 'application/json'
+    //         },
+    //         redirect: 'follow'
+    //     });
+    //     return await res.json();
+    // }
+   
+
+    // loadMore() {
+    //     this.setState({ loading: true });
+    // 	this.newGetData('url':'http://localhost:8080/chunks/', 'chunkid'=1)
+    // 	    .then((res) => {
+    // 		this.setState({chunks : res.json()});
+    // 	    });
+ 
+    //     //   setTimeout(() => {	// 
+    // 	this.setState({ chunks: this.getData(this.state.chunkid), loading: false });
+    // 	// }, 2000);
+    // }
 
     render() {
         return (

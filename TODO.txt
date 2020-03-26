@@ -7,6 +7,7 @@ CURRENT
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 [ ] Find a way around parsing strings for now, so I can get on with creating some frontend.
 [ ] Get the backend API up as an MVP, which means spitting out JSON when hit with a POST
+[ ] remove the static pages from the api (to prevent confusion when logging into the wrong port)
 
 NEXT
 ~~~~~~~~~~~~~~~~~~~~~~~~~
