@@ -32,3 +32,12 @@ The fix is to build from the ground up:
 
 there may be more steps that have to be taken before things are truly working.  That said, there is a ton about react and redux that I simply cannot learn by doing all at once.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Thursday, March 26, 2020
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+So I made some progress today but I'm a little over it.  I've come up against the issue of {I don't want to read all that fucking manual just to get this one thing working, or IDWTRATFMJTGTOFTW} and I'm pooped and over it.  So I'm turning this TODO into a sort of journal so I can pick up where I left off (approximately.)  Part of the central issue is this:  I don't entirely understand what I'm doing yet.  There are so many damn components to making the simplest shit work and I've skipped over a lot of tutorial and base learning.
+
+Things that are fucking me up:
+- getting things to 'bubble up'.  This is supposed to make things intuitive but I don't yet have the sight to look at the code and understand where everything is coming from, or what the requirements of the system are.
+
+So tomorrow maybe just focus on that part.  Make some generic components and have them do the thing in a limited fashion.  For now I'm gonna go do not this.
