@@ -110,7 +110,7 @@ class StoryPane extends Component {
 	      <ul>
 		{this.showItems()}
 	      </ul>
-              <MultiChunkView chunkviews={this.showItems()}/>
+              <MultiChunkView chunks={this.state.chunks}/>
 	    </div>
         );
     }

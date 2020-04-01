@@ -25,18 +25,15 @@ export default class MultiChunkView extends Component {
     }
     
     render(){
-        var chunkpanes = [];
-        for (const i in this.props.chunkviews){
-            chunkpanes.push(
-                <div style={{display:'block'}}>
-                  <ChunkView chunkid={i.chunkid} text={i.text} id={i.chunkid}/>
-                  <button onClick={this.replaceMulti} chunkid={i.chunkid}>follow this story</button> 
-                </div>
-            );
-        }
-        return(
+       return(
             <div className="MultiChunkView" style={compStyle}>
-              {chunkpanes}
+              {this.props.chunks.map((chunk) => {
+                  return <div className="MCV_WINDOW">
+                           <ChunkView id={'mcv'+ chunk.chunkid} text={chunk.text} style={{display:'block'}}/>
+                           <button chunkid={chunk.chunkid}>Read On</button>
+                         </div>
+                  ;
+              })}
             </div>
         );
     }
