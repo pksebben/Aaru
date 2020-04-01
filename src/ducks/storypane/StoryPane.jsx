@@ -74,7 +74,7 @@ class StoryPane extends Component {
             for (const chunk in chunklist) {
                 chunkviews.append(<ChunkView chunkid={chunk.id} text={chunk.text}/>) ;
             }
-            return (<MultiChunkView children={chunkviews} onClick={this.replaceMulti}/>);
+            return (<MultiChunkView chunkviwews={this.state.chunkviews} onClick={this.replaceMulti}/>);
         }
     }
 

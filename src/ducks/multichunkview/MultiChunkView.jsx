@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import ChunkView from '../chunkview/ChunkView';
 
+// styling for the MCV
 const compStyle = {
     display : 'inline-block',
     overflow: 'scroll',
@@ -27,8 +28,8 @@ export default class MultiChunkView extends Component {
         var chunkpanes = [];
         for (const i in this.props.chunkviews){
             chunkpanes.push(
-                <div style={{display:'inline-block'}}>
-                  <ChunkView chunkid={i.chunkid} text={i.text}/>
+                <div style={{display:'block'}}>
+                  <ChunkView chunkid={i.chunkid} text={i.text} id={i.chunkid}/>
                   <button onClick={this.replaceMulti} chunkid={i.chunkid}>follow this story</button> 
                 </div>
             );
