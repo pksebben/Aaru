@@ -4,11 +4,11 @@
 
 export CDPATH=$HOME
 
-export PYTHONPATH=~/Documents/code/Creative/Aaru
+export PYTHONPATH=~/Documents/code/Aaru
 
 source ~/.venv/aaru/bin/activate
 
-cd Documents/code/Creative/Aaru
+cd Documents/code/Aaru
 
 # run the api server
 

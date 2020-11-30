@@ -41,3 +41,60 @@ Things that are fucking me up:
 - getting things to 'bubble up'.  This is supposed to make things intuitive but I don't yet have the sight to look at the code and understand where everything is coming from, or what the requirements of the system are.
 
 So tomorrow maybe just focus on that part.  Make some generic components and have them do the thing in a limited fashion.  For now I'm gonna go do not this.
+
+
+
+
+THINGS TO ADD TO THE EDITED TODO / GOALS / README
+-------------------------
+text highlighting for 'blind-mode' shown / not-shown text
+
+
+Features for 0.1
+=========================
+
+rules
+--------------------------------------------------
+int length
+bool blinders
+int passes-to-completion
+bool private
+
+user functions
+-------------------------
+friending
+login
+privacy
+
+features for each game
+-------------------------
+commenting
+automated rule descriptions // invitation priming
+  -  Generate a link to a project that navigates to the project + a set of introductory rules
+
+
+website map
+---------------
+1 day - splash / home
+2 days - search
+0.5 day - browse
+3 days - edit
+2 days - project admin page
+1.5 days - create profile
+half hour - login
+1.5 days - view profile / yours / others'
+
+backend
+---------------
+db - 1 day setup + 5 days added (happens in conjunction with frontend)
+??? -- misc api bugfix
+
+Total
+---------------
+18 days - 3 weeks (not accounting for fudge time).
+
+PROCESS
+-------------------------
+keep track of pomodoros spent on bugfixing / what parts of the site they relate to - for reflection later
+
+

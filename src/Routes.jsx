@@ -20,7 +20,7 @@ export default function Routes() {
 	      <li><Link to="/login">Sign In</Link></li>
 	      <li><Link to="/browse">Read a Story</Link></li>
 	      <li><Link to="/write">Write a story</Link></li>
-	      <li><Link to="/storyviewer">Check out our new stoy viewer!</Link></li>
+	      <li><Link to="/storyviewer">Check out our new story viewer!</Link></li>
 	      <li><Link to="/testdb">Test the db</Link></li>
             </ul>
           </nav>
@@ -37,12 +37,29 @@ export default function Routes() {
             <Route path='/storyviewer'>
               <StoryViewer/>
             </Route>
+            <Route path='/about'>
+              <About/>
+            </Route>
           </Switch>
         </div>        
       </Router>
   );
 }
 
+function About() {
+    return (
+        <div className="AboutPage">
+          <header className="About-Header">
+            <h1 className="About-Header-Title">What are we doing here?</h1>
+            <h2 className="About-Header-Subtitle">The Aaru project is about writing, together.</h2>
+          </header>
+          <p className="About-Description">
+            ----Put an in-depth Description of the project here----
+          </p>
+          
+        </div>
+    );
+}
 
 function Home() {
     return <h1>Home</h1>;

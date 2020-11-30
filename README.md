@@ -1,4 +1,17 @@
-# writing_project
+# Aaru
+
+This is the development README for the creative writing tool Aaru.  Scroll down to see the user's README
+
+## Planned Features
+
+ - the ability to attach a license to each collection of works, that will determine whether ownership of the creative content belongs a) in the public domain, b) with the author of the content, or c) with the owner of the collection.
+ - 
+
+
+
+
+# User's README
+
 It's a working title, don't get all bent outta shape.
 
 The goal of this project is to provide a platform for authors to engage in collaborative storytelling.  Shit, now I don't know how to describe it from here.  Uh...         ...hold on.
