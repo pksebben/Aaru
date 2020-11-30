@@ -1,0 +1,109 @@
+The Writers' Game
+
+The idea is to build a massively multiplayer version of exquisite corpse.  You would log in, read a story, and have the option to expand on it, revisit it, etc.
+
+MVP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We need, at the very least:
+1. User profiles (otherwise we're vulnerable to trash)
+2. A module to write stuff in
+3. A system to branch and display stories
+4. A database
+5. Some vote ranking to sort through content and bubble the good stuff to the top.
+
+
+
+1. User Profiles
+--------------------------------------------------
+Should be hide-able (rather, users should be able to anonymize if they choose to)
+Should provide flair and ranks based on accomplishments (gear these towards making good content)
+
+
+
+2. The Writing Module
+--------------------------------------------------
+Should users be able to edit?  Should they be able to edit each others' stuff?  (with consent, of course).
+
+Should we allow users to save drafts?
+
+I think you should be required to read to at least the end of a branch before you write.
+
+I think everyone starts with one 'seed' (a token that allows you to start a story).  You can earn seeds by contributing to others' stories.  Perhaps, once you've accumulated a certain amount of certain kinds of points, you get unlimited seeds.
+    - an even better way to do it would be to relate how much buzz a seed is generating to how quickly it's planter can make a new one.
+
+How big can one block of writing be?
+
+
+
+3. The Branching System / Story Display
+--------------------------------------------------
+This is one place where there's a lot of potential for variability and this mechanic could make or break the experience.
+
+Can users take control of their own branches?
+
+Can a user set a genre for the story?
+
+I think this is one of the places where at the outset, users will choose the rules from a set of rules.
+
+Potential Abilities granted to the Gardener (the owner of the seed in a story)
+    - Select a set of 'favorites' from within a divergent storyline (so readers can follow the Gardener's favorite path)
+    - Approval of story chunks
+    - Editing of story chunks
+
+Rules
+    - Chunks are editable or not once submitted
+    - Branching is linear vs branching is divergent
+    - Set the strictness of the style guidelines?
+    - Length of chunks
+    - Whether users are allowed to write back-to-back chunks
+    - Whether users are allowed to write multiple chunks at all
+    - Chunk approval - chunks must be reviewed by the Gardener before becoming visible
+    - Reductive branching?
+        - the idea here is in a divergent branching story, there would be some mechanism for selecting out branches and moving towards a central plot.
+	- this could drive users away whose branches get selected out.
+    - 
+
+
+4. The Database
+--------------------------------------------------
+    - Users
+        - table of ids
+	- table of profile data
+	- table of voting data
+	    - list of ids already voted on (to prevent double voting)
+	    
+    - Stories
+	- table of story 'chunks'
+	    - chunk text
+	    - author
+	    - parent text id
+	    - children text ids
+	    - id
+	    - link to chunk voting table
+	- table of chunk voting data
+	    - id of pertinent chunk
+	    - number of upvotes by category
+	    - number of downvotes by category
+
+
+
+5. The Voting System
+--------------------------------------------------
+What we want votes to do is motivate good writing.
+
+Should votes have a 'flavor'?  (bad grammar, boring story, etc.)
+
+I don't want the voting to be necessarily easy, and I also don't want people to just shit on each others' stories.  Criticism should be constructive.  This is one place where perhaps I don't want users selecting criteria at all.  As in, the dev team (me) should take control of this.  It's the control for civility.
+
+
+
+BEYOND MVP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I think the first deployment should make very few actual decisions, but allow players to control settings when they create seeds.  We can then track the settings that get the best traction and use those to create "game modes" where a number of settings are predetermined.
+
+
+I may want to implement a style checker at some point, something to lint the text and enforce proper style (gramatically).
+
+Retcon mode - this could be fun to play with, but later.  Allow backwards branching.
+
+Might want to add the option to start a seed with a synopsis (much later on).  Give people the ability to direct where the story goes and such.
